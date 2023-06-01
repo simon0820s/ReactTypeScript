@@ -1,6 +1,13 @@
 import { useState } from 'react'
 import './App.css'
 
+interface Sub {
+  nick: string,
+  subMonths: number,
+  avatar: string,
+  description: string
+}
+
 function App() {
   const [subs, setSubs] = useState([
     {
@@ -25,7 +32,7 @@ function App() {
               <li key={sub.nick}>
                 <img src={sub.avatar} alt={`Avatar for ${sub.nick}`} />
                 <h4>{sub.nick} (<small>{sub.subMonths}</small>)</h4>
-                <p>{sub.description?.substring(0,100)}</p>
+                <p>{sub.description?.substring(0, 100)}</p>
               </li>
             )
           })
